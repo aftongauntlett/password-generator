@@ -34,6 +34,13 @@ function generatePassword() {
 
   // created an if statement to make sure the password is at least 8 characters long
 
+  if (parseInt(length) >= 8 && parseInt(length) <= 128 && password.indexOf(' ') === -1) {
+    alert("Valid Password!")
+
+  }
+  else {
+    alert("Invalid Password!")
+  }
 
 
 
