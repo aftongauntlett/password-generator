@@ -17,8 +17,16 @@ generateBtn.addEventListener("click", writePassword);
 // created function to generate password
 function generatePassword() {
 
-  // created the prompt for length of password
-  var length = prompt("How long would you like your password to be? (Must be between 8 -128 chararcters.)");
+  // created while loop to make sure the password is the correct length
+
+  do {
+    var length = prompt("How long would you like your password to be? (Must be between 8-128 chararcters.)");
+    length = parseInt(length)
+
+  }
+  while (length < 8 || length > 128)
+
+
 
   // created the prompt for length of password
   var charset = prompt("Please choose: lowercase, uppercase, numeric, and/or special characters");
@@ -26,18 +34,18 @@ function generatePassword() {
 
   // make it validate that at least one of those characters is present
 
-  if (charset = )
-    alert("Valid Password!")
+  // if (charset = )
+  //   alert("Valid Password!")
 
-  }
-  else {
-    alert("Invalid Password!")
-  }
+  // }
+  // else {
+  //   alert("Invalid Password!")
+  // }
 
 
   // created an if statement to make sure the password is at least 8 characters long
 
-  if (parseInt(length) >= 8 && parseInt(length) <= 128 && password.indexOf(' ') === -1) {
+  if (length >= 8 && length <= 128 && password.indexOf(' ') === -1) {
     alert("Valid Password!")
 
   }
