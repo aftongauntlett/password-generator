@@ -26,7 +26,7 @@ function generatePassword() {
   // set password to an empty string
   var password = "";
 
-  // created while loop to make sure the password meets all criteria
+  // created while loop to make sure the password meets all criteria 
 
   do {
 
