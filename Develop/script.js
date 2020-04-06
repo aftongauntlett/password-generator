@@ -26,38 +26,20 @@ function generatePassword() {
   }
   while (length < 8 || length > 128)
 
-
+  //  set charset to empty string
+  var charset = "";
 
   // created the prompt for length of password
-  var charset = prompt("Please choose: lowercase, uppercase, numeric, and/or special characters");
-
-
-  // make it validate that at least one of those characters is present
-
-  // if (charset = )
-  //   alert("Valid Password!")
-
-  // }
-  // else {
-  //   alert("Invalid Password!")
-  // }
-
-
-  // created an if statement to make sure the password is at least 8 characters long
-
-  if (length >= 8 && length <= 128 && password.indexOf(' ') === -1) {
-    alert("Valid Password!")
-
-  }
-  else {
-    alert("Invalid Password!")
+  if (confirm("Would you like an uppercase letter?")) {
+    charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   }
 
 
-  // created charset to include all possible characters for the generated password. Included toUpperCase.
-  var charset = "abcdefghijklmnopqrstuvwxyz!@#$%^&* ()_ + ~`|}{[]\:;?><,./-=0123456789".toUpperCase() + "abcdefghijklmnopqrstuvwxyz";
 
-  // set var password to ""
+  // // created charset to include all possible characters for the generated password. Included toUpperCase.
+  // var charset = "abcdefghijklmnopqrstuvwxyz!@#$%^&* ()_ + ~`|}{[]\:;?><,./-=0123456789".toUpperCase() + "abcdefghijklmnopqrstuvwxyz";
+
+  // set var password to empty string
   var password = "";
 
 
