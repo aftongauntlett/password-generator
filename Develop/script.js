@@ -17,8 +17,10 @@ generateBtn.addEventListener("click", writePassword);
 // created function to generate password
 function generatePassword() {
 
-  // moved all variables top of file
-  var lengthAsk = false
+  // Moved all variables top of file:
+
+  // created lengthAsk and set it to true. The computer will prompt an error if it becomes false. It only becomes false if it has to run the loop again, meaning user entered the incorrect length.
+  var lengthAsk = true
   // set charset to an empty string
   var charset = "";
   // set password to an empty string
@@ -27,15 +29,16 @@ function generatePassword() {
   // created while loop to make sure the password meets all criteria
 
   do {
-    // created lengthAsk and set it to false, so invalid length will prompt an error message.
-    if (lengthAsk) {
-      var length = prompt("Invalid - Please try again! Must be between 8-128 characters.")
-    } else {
 
+    if (lengthAsk) {
       var length = prompt("How long would you like your password to be? (Must be between 8-128 characters.)");
-      lengthAsk = true;
+      lengthAsk = false
+
+    } else {
+      var length = prompt("Invalid - Please try again! Must be between 8-128 characters.")
+
     }
-    // used parseInt to replace string to numbers
+
     length = parseInt(length)
 
   }
@@ -56,9 +59,8 @@ function generatePassword() {
   }
 
   if (confirm("Would you like to include a special character?")) {
-    charset += "!@#$%^&* ()_ + ~`|}{[]\:;?><,./-="
+    charset += "!@#$%^&*()_+ ~`|}{[]\:;?><,./-="
   }
-
 
   // created a for statement for the computer to cycle through everything and generate the password combinations.
   for (var i = 0, n = charset.length; i < length; ++i) {
