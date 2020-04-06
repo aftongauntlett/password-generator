@@ -17,8 +17,14 @@ generateBtn.addEventListener("click", writePassword);
 // created function to generate password
 function generatePassword() {
 
-  // created while loop to make sure the password meets all criteria
+  // moved all variables top of file
   var lengthAsk = false
+  // set charset to an empty string
+  var charset = "";
+  // set password to an empty string
+  var password = "";
+
+  // created while loop to make sure the password meets all criteria
 
   do {
     // created lengthAsk and set it to false, so invalid length will prompt an error message.
@@ -36,9 +42,6 @@ function generatePassword() {
   // length less than 9 OR length greated than 128 - cannot fix bug where user hits cancel :( 
   while (length < 8 || length > 128)
 
-  //  set charset to empty string
-  var charset = "";
-
   // created the prompts (true or false) for each option - yes includes the character choices, cancel (or no) does not include the choice.
   if (confirm("Would you like to include an uppercase letter?")) {
     charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -55,10 +58,6 @@ function generatePassword() {
   if (confirm("Would you like to include a special character?")) {
     charset += "!@#$%^&* ()_ + ~`|}{[]\:;?><,./-="
   }
-
-
-  // set var password to empty string
-  var password = "";
 
 
   // created a for statement for the computer to cycle through everything and generate the password combinations.
