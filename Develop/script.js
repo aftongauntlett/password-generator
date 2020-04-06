@@ -30,14 +30,22 @@ function generatePassword() {
   var charset = "";
 
   // created the prompt for length of password
-  if (confirm("Would you like an uppercase letter?")) {
+  if (confirm("Would you like to include an uppercase letter?")) {
     charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   }
 
+  if (confirm("Would you like to include a lowercase letter?")) {
+    charset += "abcdefghijklmnopqrstuvwxyz"
+  }
 
+  if (confirm("Would you like to include a number?")) {
+    charset += "0123456789"
+  }
 
-  // // created charset to include all possible characters for the generated password. Included toUpperCase.
-  // var charset = "abcdefghijklmnopqrstuvwxyz!@#$%^&* ()_ + ~`|}{[]\:;?><,./-=0123456789".toUpperCase() + "abcdefghijklmnopqrstuvwxyz";
+  if (confirm("Would you like to include a special character?")) {
+    charset += "!@#$%^&* ()_ + ~`|}{[]\:;?><,./-="
+  }
+
 
   // set var password to empty string
   var password = "";
