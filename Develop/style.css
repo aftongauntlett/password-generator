@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: 'Cutive Mono', monospace;
-  background-color: #eef2f7;
+  background-color: #f2f5f8;
 }
 
 .wrapper {
@@ -31,7 +31,7 @@ header {
 }
 
 .card {
-  background-color: hsl(218, 21%, 93%);
+  background-color: hsl(240, 11%, 86%);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -75,7 +75,7 @@ header {
 
 .btn {
   border: none;
-  background-color: rgb(180, 179, 185);
+  background-color: rgb(187, 184, 199);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
