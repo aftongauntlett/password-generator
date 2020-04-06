@@ -17,19 +17,29 @@ generateBtn.addEventListener("click", writePassword);
 // created function to generate password
 function generatePassword() {
 
-  // created while loop to make sure the password is the correct length
+  // created while loop to make sure the password meets all criteria
+  var lengthAsk = false
 
   do {
-    var length = prompt("How long would you like your password to be? (Must be between 8-128 chararcters.)");
+    // created lengthAsk and set it to false, so invalid length will prompt an error message.
+    if (lengthAsk) {
+      var length = prompt("Invalid - Please try again! Must be between 8-128 characters.")
+    } else {
+
+      var length = prompt("How long would you like your password to be? (Must be between 8-128 characters.)");
+      lengthAsk = true;
+    }
+    // used parseInt to replace string to numbers
     length = parseInt(length)
 
   }
+  // length less than 9 OR length greated than 128 - cannot fix bug where user hits cancel :( 
   while (length < 8 || length > 128)
 
   //  set charset to empty string
   var charset = "";
 
-  // created the prompt for length of password
+  // created the prompts (true or false) for each option - yes includes the character choices, cancel (or no) does not include the choice.
   if (confirm("Would you like to include an uppercase letter?")) {
     charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   }
@@ -55,7 +65,6 @@ function generatePassword() {
   for (var i = 0, n = charset.length; i < length; ++i) {
     password += charset.charAt(Math.floor(Math.random() * n));
   }
-
 
   return password;
 
